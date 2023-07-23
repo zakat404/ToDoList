@@ -5,11 +5,13 @@ export const TodoForm = ({addTodo}) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addTodo(value)
+    addTodo(value);
+
+    setValue("")
   }
   return (
     <form className='TodoForm' onSubmit={handleSubmit}>
-        <input type='text' className='todo-input' placeholder='write the task' 
+        <input type='text' className='todo-input' value={value} placeholder='write the task' 
         onChange={
           (e)=> setValue(e.target.value) 
         } />
